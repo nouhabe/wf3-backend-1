@@ -5,14 +5,15 @@
 
 <body>
 
-<h1>Exercice 1 de PHP</h1>
+<h1>
+    Exercice 1 de PHP : 
+    Syntaxe de base du langage
+</h1>
 
 
 <h2>Exemple a)</h2>
 
-<?php
-    echo "Hello World!"
-?>
+<p><?php echo "Hello World!" ?></p>
 
 <h2>Exemple b)</h2>
 
@@ -36,10 +37,10 @@
     // echo $VITESSE_MAX; est une erreur car ce n'est PAS une VARIABLE mais une CONSTANTE
     // echo VITESSE_MAX;
     // echo " ";
-    // echo constant("VITESSE_MAX");
-
-    echo $z;
+    // echo constant("VITESSE_MAX");  
 ?>
+
+<p><?php echo $z ?></p>
 
 <h2>Exemple c)</h2>
 
@@ -56,9 +57,9 @@
 
     // Exemple supplémentaire
     $z = $entier + $entier - $decimal;
-
-    echo $z;
 ?>
+
+<p><?php echo $z ?></p>
 
 <h2>Exemple d)</h2>
 <!-- Mise en place d'une liste -->
