@@ -34,5 +34,7 @@
     echo constant("VITESSE_MAX");
 ?>
 
+<h2>Exemple c)</h2>
+
 </body>
 </html>
