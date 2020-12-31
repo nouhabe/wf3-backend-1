@@ -139,22 +139,32 @@
     <?php
     $x = 1;
     $y = 835;
-    while ($x <= $y) {
-        echo "$x";
+    echo "<ul>";
+    while ($x < $y) {
+       
         $x++;
     }
+    echo "<li>$x<li/>";
+    echo "<li>$y</li>";
+    echo "</ul>";
+
+    $x = 1;
+    $y = 835;
+    echo "<ul>"; 
     do {
-        echo "$x";
         $x++;
-    } while ($x <= $y);
+    } while ($x < $y);
+    echo "<li>$x<li/>";
+    echo "<li>$y</li>";
+    echo "</ul>";
+
 
     ?>
     <h4>exercice2</h4>
     <?php
     echo "<ul>";
 
-    for ($i = 7; $i <= 100;) {
-        $i = $i + 7;
+    for ($i = 7; $i < 1000; $i += 7) {
         echo "<li>$i</li>";
     }
     echo "</ul>";
@@ -162,22 +172,20 @@
     <h4>exercice3</h4>
     <?php
 
-    $m = 3754;
-    $flag = 0;
-    for ($j = 2; $j <= ($m / 2); ++$j) {
-        if (($m % $j) == 0) {
-
-            $flag = 1;
-            break;
-        } 
-    } 
-    if ($m == 1) {
+    $m = 1;
+        if ($m == 1) {
         echo "<p> $m est un nombre premier</p>";
-    } else {
-        if ($flag == 0){
-            echo "<p>$m est un nombre premier</p>";
-        } else{
+    } 
+        for ($j = 2; $j <= ($m / 2); $j++) {
+        
+   
+            if ($m % $j == 0) {
             echo "<p>$m n'est pas un nombre premier</p>";
+          break;
+    } 
+            
+        else{
+            echo "<p>$m est un nombre premier</p>";
         }
     }
 
