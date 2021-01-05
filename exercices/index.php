@@ -172,8 +172,8 @@
     <h4>exercice3</h4>
     <?php
 
-    $m = 1;
-        if ($m == 1) {
+    $m = 9;
+        if ($m === 1) {
         echo "<p> $m est un nombre premier</p>";
     } 
         for ($j = 2; $j <= ($m / 2); $j++) {
@@ -192,7 +192,126 @@
 
     ?>
 
+<h2>les tableaux</h2>
+<?php
+$car[0] ="dacia";
+$car[1] ="BMW";
+$car[2] ="Toyota";
 
+$cars=["Dacia,BMW,Toyota"] ; //similaire aus 3 lignes précédentes
+$cars= array ("Dacia","BMW","Toyota","mescedes");
+
+echo "<p>".$car[0]." et ".$car[1]." et ".$car[2]."</p>";
+echo "<p>".count($cars)."</p>";
+
+//parcours de Tableau
+$taille=count($cars);
+
+echo'<ol type="A" reversed>';
+for ($i=0;$i<$taille;$i++){
+    echo "<li>".$cars[$i]."</li>";
+}
+echo"</ol>";
+
+?>
+<h4>ma recette de gateau</h4>
+<ul>
+    <h3>les ingrédients :</h3>
+    <li>100g de farine</li>
+    <li>50g de sucre</li>
+    <li>4 ouefs</li>
+    <li>100 ml lait</li>
+
+</ul>
+<ol>
+    <h3>les ingrédients :</h3>
+    <li>100g de farine</li>
+    <li>50g de sucre</li>
+    <li>4 ouefs</li>
+    <li>100 ml lait</li>
+
+
+</ol>
+
+<h2>les tableaux associatifs</h2>
+
+<?php
+$age["Zakaria"]="27";
+$age["Fatima"]="37";
+$age["Rida"]="43";
+echo "<p>".$age["Zakaria"]."</P>";
+
+$age= array("Zakaria"=>"27","37")
+
+
+//$tab=["nom"=>["Zakaria","Fatima","Rida"],"age"=>["27","37","43"]];
+
+//echo $tab["nom"][1];
+//echo $tab["age"][1];
+
+
+?>
+
+
+
+<h2>TP2: les tableaux</h2>
+<h3>les tableaux:1</h3>
+<?php
+$months=["janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"];
+$taille=count($months);
+
+echo'<ol>';
+for ($i=0;$i<$taille;$i++){
+    echo "<li>".$months[$i]."</li>";
+}
+echo"</ol>";
+
+
+echo "<ol>";
+    $x = 0;
+    while ($x < $taille) {
+        echo "<li>".$months[$x]."</li>";
+        $x++;
+    }
+    echo "</ol>";
+
+    echo "<ol>";
+    $x = 0;
+    do {
+        echo "<li>".$months[$x]."</li>";
+        $x++;
+    } while ($x < $taille);
+    echo "</ol>";
+    ?>
+<h3>les tableaux:2</h3>
+<?php
+$pays= array( "France"=>"paris","Norvège"=>"Oslo","Sénégal"=>"Dakar","Inde"=>"New delhi","Chine"=>"Pékin","Mexique"=>"Mexico",);
+foreach($pays as $capital){
+    echo"<p>". $capital."</p>";
+}
+?>
+<h3>les tableaux:3</h3>
+<?php
+$X=array('A','B','C','D');
+$Y=array('E','F','G','H');
+$combined = array_merge($X, $Y);
+
+
+
+
+    echo"<ul>";
+    foreach($combined as $donnée){
+        echo"<li>". $donnée."</li>";
+    }
+        
+    
+    echo"</ul>";
+
+
+
+
+
+?>
 </body>
 
 </html>

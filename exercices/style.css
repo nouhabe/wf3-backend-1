@@ -1,3 +1,7 @@
 li {
     font-weight: bold;
 }
+ol{
+    counter-reset: moncompteur;
+    list-style-type:none;
+}
