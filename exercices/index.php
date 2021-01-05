@@ -241,16 +241,81 @@ $age["Fatima"]="37";
 $age["Rida"]="43";
 echo "<p>".$age["Zakaria"]."</P>";
 
-$age= array("Zakaria"=>"27","37")
+$age= array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
+echo "<ul>";
+foreach($age as $name=>$value){
+    echo "<li>".$name." a ".$value." printemps !"."</li>";
+    if($value<=10)
+        echo"<p class='couleur'>"."c'est un enfant !"."</P>";
+    elseif($value>10 && $value<18)
+        echo"<p class='couleur'>"."c'est un ado !"."</P>";
+    elseif($value>=30 && $value<40)
+        echo"<p class='couleur'>"."Alors, on a la trentaine ? !"."</P>";  
+    elseif( $value>40)
+        echo"<p class='couleur'>"."Tu t'appelle pas Rida?"."</P>"; 
+    elseif($value>=20 && $value<30)
+        echo"<p class='couleur'>"."La vingtaine !"."</P>";         
+}
 
+echo "</ul>";
 
-//$tab=["nom"=>["Zakaria","Fatima","Rida"],"age"=>["27","37","43"]];
+foreach($age as $name=>$value) {
+    echo "<li>".$name." a ".$value." printemps !"."</li>";
+    switch ($value) {
+        case $value <= 10: echo "<p> Enfant ! </p>"; 
+            break;
+        case $value > 10 &&  $value <18 : echo "<p> Ado ! </p>"; 
+            break; 
+        case ($value >= 30 && $value < 40): echo "<p>Alors, on a la trentaine ?</p>"; 
+            break; 
+        case ($value == 43): echo "<p>Tu t'apellerais pas Rida, par hasard ?</p>"; 
+            break;
+        case ($value < 30 && $value >= 20): echo "<p>La vingtaine !</p>"; 
+            break;
+    }
+}
 
-//echo $tab["nom"][1];
-//echo $tab["age"][1];
+$age= array("Zakaria"=>"27","Fatima"=>"37","Rida"=>"43");
+    echo"<p>".print_r(array_keys($age))."</p>" ;
+    echo"<p>".print_r(array_values($age))."</p>";
+    echo"<p>".print_r($age)."</p>";
 
 
 ?>
+<h3>fonctions des tableaux associatifs</h3>
+<?php
+$cars= array ("Dacia","BMW","Toyota",);//création tableau
+sort($cars);//tri dans l'ordre alphabétique(tableau chaine de caractère)
+echo"<p>".print_r($cars)."</p>";//affichage
+
+$numbers= array ("4","6","2","22","11");
+sort($numbers);//tri dans l'ordre croissant(tableau de nombre)
+echo"<p>".print_r($numbers)."</p>";
+
+rsort($numbers);//tri dans l'ordre décroissant(tableau de nombre)
+echo"<p>".print_r($numbers)."</p>";
+
+$os=array("Mac","NT","Irix","Linux");
+    if (in_array("Irix",$os)){
+        echo "<p>j'ai Irix</p>";
+}
+    if (in_array("Mac",$os)){
+        echo "<p>j'ai Mac</p>";}
+
+
+$array1=array("color"=>"red",2,4,"size"=>"tall","yes",7);
+    echo"<p>".print_r($array1)."</p>";
+    echo"<p>".print_r(array_keys($array1))."</p>" ;
+$array2=array("a","b","color"=>"green","shape"=>"trapezold",4);
+$result=array_merge($array1,$array2);
+    sort($result);
+        echo"<p>".print_r($result)."</p>";
+
+
+?>
+
+
+
 
 
 
@@ -294,19 +359,38 @@ foreach($pays as $capital){
 <?php
 $X=array('A','B','C','D');
 $Y=array('E','F','G','H');
-$combined = array_merge($X, $Y);
+$X = array_merge($X, $Y);
 
 
 
 
     echo"<ul>";
-    foreach($combined as $donnée){
+    foreach($X as $donnée){
         echo"<li>". $donnée."</li>";
     }
-        
-    
     echo"</ul>";
 
+?>
+<h2>les fonctions</h2>
+<?php
+
+
+
+function writeMsg($firstname ,$name , $repetition ){
+    for($i=0;$i<$repetition;$i++){
+        paragraph("hello ".$firstname." ".$name."!");
+        // echo "hello ".$firstname." ".$name."!";
+    }
+    
+}
+
+writeMsg("sayah","alyatim","2");//appel de fonction
+
+function paragraph($chaine ){
+    echo"<p>".$chaine."</p>";
+}
+
+paragraph("poulet");
 
 
 

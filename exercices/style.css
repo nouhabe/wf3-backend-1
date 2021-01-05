@@ -5,3 +5,7 @@ ol{
     counter-reset: moncompteur;
     list-style-type:none;
 }
+.couleur{
+    color :red;
+}
+    
